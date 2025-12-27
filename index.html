@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithms Test</title>
+</head>
+<body>
+
+<h1>Algorithms</h1>
+
+
+<script>
+
+
+let A = [3, 1, 7, 9];
+let B = [2, 4, 1, 9, 3];
+
+let sum = 0;
+
+
+for (let i = 0; i < A.length; i++) {
+    let found = false;
+    for (let j = 0; j < B.length; j++) {
+        if (A[i] === B[j]) {
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        sum += A[i];
+    }
+}
+
+
+for (let i = 0; i < B.length; i++) {
+    let found = false;
+    for (let j = 0; j < A.length; j++) {
+        if (B[i] === A[j]) {
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        sum += B[i];
+    }
+}
+
+console.log("Sum of distinct elements =", sum);
+
+
+function dotProduct(v1, v2) {
+    let ps = 0;
+    for (let i = 0; i < v1.length; i++) {
+        ps += v1[i] * v2[i];
+    }
+    return ps;
+}
+
+
+let v1 = [1, 2, 3];
+let v2 = [3, -2, 1];
+
+
+let result = dotProduct(v1, v2);
+
+
+if (result === 0) {
+    console.log("Vectors are orthogonal");
+} else {
+    console.log("Vectors are not orthogonal");
+}
+</script>
+
+</body>
+</html>
